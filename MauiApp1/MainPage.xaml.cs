@@ -4,10 +4,10 @@ public partial class MainPage : ContentPage
 {
     int count = 0;
 
-    public MainPage()
+    public MainPage(HomeViewModel viewModel)
     {
         InitializeComponent();
-        BindingContext = ServiceHelper.Current.GetService<HomeViewModel>();
+        BindingContext = viewModel;
     }
 
     private void OnCounterClicked(object sender, EventArgs e)
@@ -22,4 +22,3 @@ public partial class MainPage : ContentPage
         SemanticScreenReader.Announce(CounterBtn.Text);
     }
 }
-
